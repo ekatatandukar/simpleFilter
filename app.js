@@ -29,10 +29,19 @@ function displayNames() {
 
 function searchItem() {
     var userInput = document.getElementById("txtField").value;
-    document.getElementById("abc").innerHTML = userInput;
+    document.getElementById("checkInput").innerHTML = userInput;
 
-    var itemIndex = itemsList.indexOf(userInput);
-    document.getElementById("ddd").innerHTML = itemIndex;
+
+    for(let j = 0; j < itemsList.length; j++) {
+        if (userInput == itemsList[j].name) {
+            document.getElementById("exists").innerHTML = "YES";
+        } else {
+            document.getElementById("exists").innerHTML = "asdfas";
+        }
+    }
+    
+
+
 }
 
 
