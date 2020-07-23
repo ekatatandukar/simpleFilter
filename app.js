@@ -22,6 +22,7 @@ const itemsList = [
 ];
 
 function displayNames() {
+  document.getElementById('itemNames').innerHTML = '';
   const userInput = document.getElementById('txtField').value.toLowerCase();
 
   const filtered = itemsList.filter((item) =>
@@ -35,17 +36,9 @@ function displayNames() {
 
   console.log(dataToMap, 'dataToMap');
 
-  if (userInput) {
-    document.getElementById('searchTitle').innerHTML = 'Search Results: ';
-    for (let i = 0; i < dataToMap.length; i++) {
-      document.getElementById('searchResults').innerHTML +=
-        dataToMap[i].name + '<br />';
-    }
-  } else {
-    for (let i = 0; i < dataToMap.length; i++) {
-      document.getElementById('itemNames').innerHTML +=
-        dataToMap[i].name + '<br />';
-    }
+  for (let i = 0; i < dataToMap.length; i++) {
+    document.getElementById('itemNames').innerHTML +=
+      dataToMap[i].name + '<br />';
   }
 }
 
